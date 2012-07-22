@@ -1,0 +1,5 @@
+login.msg=логин
+password.msg=пароль
+remember.msg=запомнить меня
+register.msg=регистрация
+password.restore.msg=восстановить пароль

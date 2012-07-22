@@ -1,0 +1,32 @@
+@()(implicit coreSubmodules: ua.net.resources.model.CoreSubmodules)
+
+<c:if test="${users_list_page ne null}">
+    <div style="margin-top:15px;margin-left: 5px;">@parts.loginForm()</div>
+</c:if>
+
+<c:if test="${partners_global_module ne null}">
+    <div style="margin-top:15px;"><img alt="Партнеры" src='@routes.Assets.at("images/left3/partners_msg.jpg")'></div>
+    <div style="margin-top:5px;margin-left:25px;">file="../globalModules/partners.jsp"</div>
+</c:if>
+
+@if(!coreSubmodules.regions.isEmpty) {
+    <div style="margin-top:15px;"><img alt="Регионы" src='@routes.Assets.at("images/left3/regions_msg.jpg")'></div>
+    <div style="margin-top:5px;margin-left:25px;">@parts.regions(coreSubmodules.regions)</div>
+}
+
+<c:if test="${links_exchange_page ne null}">
+    <div style="margin-top:15px;"><a href="index.html?id_pages=${links_exchange_page.id}"><img src='@routes.Assets.at("images/left3/links_msg.jpg")' alt="${links_exchange_page.name}" title="${links_exchange_page.name}"></a></div>
+</c:if>
+
+<c:forEach items="${SAPE_ATTRIBUTE}" var="link">
+    <div style="margin-top:10px;margin-left:25px;">${link}</div>
+</c:forEach>
+
+<c:if test="${leader ne null}">
+    <div style="margin-top:15px;"><img src='@routes.Assets.at("images/left3/lider_msg.jpg")' alt="Лидер рейтинга" title="Лидер рейтинга"></div>
+    <div style="margin-top:10px;margin-left:25px;">
+        <img src='@routes.Assets.at("images/left3/mark.jpg")'><a class="form_partners" href="index.html?id_sites=${leader.id}&id_pages=${leader.id_pages}&id_regions=">${leader.title}</a>
+    </div>
+</c:if>
+
+<div align="center" style="margin-top:15px;"><a href="/" class="self_url" title="${site_title_text}">${site_title_text}</a></div>

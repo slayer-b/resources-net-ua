@@ -1,0 +1,7 @@
+@()(implicit coreSubmodules: ua.net.resources.model.CoreSubmodules)
+
+@if(coreSubmodules.user.isEmpty) {
+        @parts.notLoginedForm()
+} else {
+        @parts.loginedForm(coreSubmodules.user.get)
+}

@@ -1,0 +1,18 @@
+@()
+
+<script language='JavaScript'>
+    <!--
+    var search_count=1;
+    //-->
+</script>
+<form method="get" action="index.html">
+    <table class="search" cellpadding="0" cellspacing="0">
+        <tr valign="middle"><td width="30px"></td>
+            <td>
+                <input class="search" type="text" value="Поиск" name="search_text" onFocus="search_count=clear_search(this,search_count);" onBlur="search_count=return_search(this,search_count,'Поиск')">
+            </td>
+            <td align="center"><input type="image" src='@routes.Assets.at("images/search_button.gif")'></td>
+        </tr>
+        <input type="hidden" name="id_pages" value="${search_page.id}">
+    </table>
+</form>

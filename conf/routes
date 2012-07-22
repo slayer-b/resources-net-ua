@@ -3,7 +3,8 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET     /                                               controllers.Application.mainPage
+GET     /index.html                                     controllers.Application.otherPage(id_pages: Option[Long])
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /s/*file             controllers.Assets.at(path="/public", file)

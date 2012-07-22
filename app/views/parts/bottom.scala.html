@@ -1,0 +1,15 @@
+@()(implicit coreSubmodules: ua.net.resources.model.CoreSubmodules)
+
+<table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td><table cellpadding="0" cellspacing="0"><tr>
+            @for(counter <- coreSubmodules.counters) {
+                <td class="counters_spacer"/><td>@Html(counter.text)</td>
+            }
+        </tr></table></td>
+        <td rowspan="2" align="center" valign="bottom"></td>
+        <td rowspan="2" align="right"><img src='@routes.Assets.at("images/bottom_right.jpg")'></td>
+    </tr>
+
+    <tr><td align="left" valign="bottom"><img src='@routes.Assets.at("images/rights.jpg")'></td></tr>
+</table>

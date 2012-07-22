@@ -1,0 +1,16 @@
+@(user: ua.net.resources.domain.User)
+
+<table class="auth_logined" cellspacing="2px" cellpadding="0">
+
+    <tr><td class="auth_spacer"></td><td></td></tr>
+
+    <tr align="left"><td></td><td><span class="auth"><fmt:message key="hello_msg"/>, @user.name</span></td></tr>
+
+    <tr align="left"><td></td><td><a class="auth" href="update.php?id_pages=${users_list_page.id}"><fmt:message key="myData_msg"/></a></td></tr>
+
+    <tr align="left"><td></td><td><a class="auth" href="index.php?id_pages=${users_list_page.id}"><fmt:message key="mySites_msg"/>(<generic:TableCount tableName="sites" whereCol="id_users" whereVal="${requestScope['current_user'].id}"/>)</a></td></tr>
+    <tr align="left"><td></td><td><a class="auth" href="?logout"><fmt:message key="logout_msg"/></a></td></tr>
+
+    <tr height="30px"><td></td></tr>
+
+</table>

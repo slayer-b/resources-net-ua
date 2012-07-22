@@ -1,0 +1,5 @@
+login.msg=login
+password.msg=password
+remember.msg=remember me
+register.msg=register
+password.restore.msg=restore password
