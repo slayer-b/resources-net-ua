@@ -12,8 +12,6 @@ object Application extends Controller with Submodules {
   
   def mainPage() = Action {
     val page = PagesService.findMainPage()
-    println("main")
-    PagesService.someOperation()
     Ok(views.html.main.pages("main"))
   }
 
@@ -22,8 +20,6 @@ object Application extends Controller with Submodules {
       case Some(id) => PagesService.findPage(id)
       case None => PagesService.findMainPage()
     }
-
-    println("other")
     Ok(views.html.main.pages("other"))
   }
 }

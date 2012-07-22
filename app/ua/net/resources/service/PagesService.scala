@@ -19,13 +19,4 @@ object PagesService {
     Pages(id, id.toString, "not-main")
   }
 
-  def someOperation() = {
-    println("before")
-    DB.withConnection { implicit c =>
-      val rez = SQL("Select 1").execute()
-      println(rez)
-    }
-    println("after")
-  }
-
 }
