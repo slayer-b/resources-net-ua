@@ -2,6 +2,10 @@
 
 # --- !Ups
 
+drop table regions;
+drop table site_config;
+drop table counters;
+
 CREATE TABLE regions (
   id BIGINT(20) NOT NULL AUTO_INCREMENT,
   name TEXT NOT NULL,
