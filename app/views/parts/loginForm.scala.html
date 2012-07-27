@@ -1,4 +1,4 @@
-@()(implicit coreSubmodules: ua.net.resources.model.CoreSubmodules)
+@()(implicit coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
 
 @if(coreSubmodules.user.isEmpty) {
         @parts.notLoginedForm()

@@ -1,4 +1,4 @@
-@()(implicit coreSubmodules: ua.net.resources.model.CoreSubmodules)
+@()(implicit coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
 
 <c:if test="${users_list_page ne null}">
     <div style="margin-top:15px;margin-left: 5px;">@parts.loginForm()</div>
@@ -29,4 +29,4 @@
     </div>
 </c:if>
 
-<div align="center" style="margin-top:15px;"><a href="/" class="self_url" title="${site_title_text}">${site_title_text}</a></div>
+<div align="center" style="margin-top:15px;"><a href="/" class="self_url" title="@coreSubmodules.siteConfig.title">@coreSubmodules.siteConfig.title</a></div>

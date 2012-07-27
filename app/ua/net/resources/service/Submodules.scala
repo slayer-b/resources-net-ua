@@ -1,6 +1,6 @@
 package ua.net.resources.service
 
-import ua.net.resources.domain.{Region, Counter}
+import ua.net.resources.domain.{SiteConfig, Region, Counter}
 import ua.net.resources.model.CoreSubmodules
 
 /**
@@ -10,7 +10,11 @@ import ua.net.resources.model.CoreSubmodules
 
 trait Submodules {
 
-  implicit def coreSubmodules =
-    CoreSubmodules(Counter.findAllActiveOrdered(), Region.findAllOrdered(), None)
+  implicit def coreSubmodules = CoreSubmodules(
+      SiteConfig.find(),
+      Counter.findAllActiveOrdered(),
+      Region.findAllOrdered(),
+      None
+  )
 
 }

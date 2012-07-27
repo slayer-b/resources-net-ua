@@ -1,9 +1,8 @@
 @(name: String)(implicit navigation: Seq[ua.net.resources.model.NavItem],
-coreSubmodules: ua.net.resources.model.CoreSubmodules)
+coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
 
 @import scala.collection._
 @import ua.net.resources.model._
 
-@templates.publicView("title", "keywords", "description")("site_title_text") {
-<div style="color: red;">@name</div>
+@templates.publicView("title", "keywords", "description") {
 }
