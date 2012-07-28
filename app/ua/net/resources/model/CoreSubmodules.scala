@@ -1,6 +1,6 @@
 package ua.net.resources.model
 
-import ua.net.resources.domain.{SiteConfig, User, Region, Counter}
+import ua.net.resources.domain._
 import play.api.i18n.Lang
 
 /**
@@ -11,5 +11,6 @@ case class CoreSubmodules(
   siteConfig: SiteConfig,
   counters: Seq[Counter],
   regions: Seq[Region],
-  user: Option[User]
+  user: Option[User],
+  page: Pages
 )

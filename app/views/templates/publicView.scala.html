@@ -1,5 +1,4 @@
-@(title: String, keywords: String, description: String
-)(content: Html
+@(content: Html
 )(implicit navigation: Seq[ua.net.resources.model.NavItem],
 coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
 @import ua.net.resources.model._
@@ -9,9 +8,9 @@ coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>@title</title>
-    <meta name="keywords" content="@keywords">
-    <meta name="description" content="@description">
+    <title>@coreSubmodules.page.title</title>
+    <meta name="keywords" content="@coreSubmodules.page.keywords">
+    <meta name="description" content="@coreSubmodules.page.description">
 
     <link rel="stylesheet" type="text/css" href='@routes.Assets.at("styles/styles1.css")'>
     <script language="JavaScript" src='@routes.Assets.at("scripts/script1.js")'></script>
