@@ -12,5 +12,6 @@ case class CoreSubmodules(
   counters: Seq[Counter],
   regions: Seq[Region],
   user: Option[User],
-  page: Pages
+  page: Pages,
+  region: Option[Region]
 )

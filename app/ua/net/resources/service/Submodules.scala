@@ -8,14 +8,15 @@ import ua.net.resources.model.CoreSubmodules
  * Date: 21.07.12
  */
 
-trait Submodules {
+object Submodules {
 
-  implicit def coreSubmodules(implicit page: Pages) = CoreSubmodules(
+  def coreSubmodules(page: Pages, region: Option[Region]) = CoreSubmodules(
       SiteConfig.find(),
       Counter.findAllActiveOrdered(),
       Region.findAllOrdered(),
       None,
-      page
+      page,
+      region
   )
 
 }
