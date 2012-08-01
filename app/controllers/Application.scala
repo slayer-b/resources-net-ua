@@ -24,10 +24,7 @@ object Application extends Controller with LocaleChange {
   def mainPage() = Action { implicit request =>
     val form = mainPageFormBinder.bindFromRequest().get
 
-    val page = form.id_pages match {
-      case Some(id) => Pages.findPage(id)
-      case None => Pages.findMainPage()
-    }
+    val page = Pages.findByIdOrElseMainPage(form.id_pages)
 
     val region = form.id_region.flatMap(Region.findById(_))
 
