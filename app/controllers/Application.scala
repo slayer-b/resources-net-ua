@@ -14,22 +14,22 @@ object Application extends Controller with LocaleChange {
 
   implicit val navigation: Seq[NavItem] = Array(NavItem("item-1"), NavItem("item-2"))
 
-  val myFormBinder = Form(
+  val mainPageFormBinder = Form(
     mapping(
       "id_pages" -> optionalLongNumber,
       "id_regions" -> optionalLongNumber
-    )(MyForm.apply)(MyForm.unapply)
+    )(MainPageForm.apply)(MainPageForm.unapply)
   )
   
   def mainPage() = Action { implicit request =>
-    val myForm = myFormBinder.bindFromRequest().get
+    val form = mainPageFormBinder.bindFromRequest().get
 
-    val page = myForm.id_pages match {
+    val page = form.id_pages match {
       case Some(id) => Pages.findPage(id)
       case None => Pages.findMainPage()
     }
 
-    val region = myForm.id_region.flatMap(Region.findById(_))
+    val region = form.id_region.flatMap(Region.findById(_))
 
     implicit val coreSubmodules = Submodules.coreSubmodules(page, region)
 
@@ -38,4 +38,4 @@ object Application extends Controller with LocaleChange {
 
 }
 
-case class MyForm(id_pages: Option[Long], id_region: Option[Long])
+case class MainPageForm(id_pages: Option[Long], id_region: Option[Long])
