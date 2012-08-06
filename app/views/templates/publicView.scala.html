@@ -1,6 +1,7 @@
 @(content: Html
 )(implicit navigation: Seq[ua.net.resources.model.NavItem],
 coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
+
 @import ua.net.resources.model._
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -55,8 +56,11 @@ coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
             </tr></table>
 
             <div style="margin-bottom: 10px;">
-                @for(navItem <- navigation) {
-                    <a href="#">@navItem.name</a>
+                <img alt="*" src='@routes.Assets.at("images/content_mark_nav.gif")'/>
+                <a class="top_nav" href="#">@navigation.head.name</a>
+                @for(navItem <- navigation.tail) {
+                    <img alt=">" src='@routes.Assets.at("images/content_mark_nav_2.gif")'/>&nbsp;
+                    <a class="top_nav" href="#">@navItem.name</a>
                 }
             </div>
             <div>@content</div>
