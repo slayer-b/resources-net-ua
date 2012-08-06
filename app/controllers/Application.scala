@@ -2,17 +2,15 @@ package controllers
 
 import play.api.mvc._
 import ua.net.resources.service.Submodules
-import ua.net.resources.model.NavItem
+import ua.net.resources.model.{CoreSubmodules, NavItem}
 import ua.net.resources.domain.{Region, Pages}
-import ua.net.resources.controllers.LocaleChange
+import ua.net.resources.controllers.{Navigation, LocaleChange}
 import ua.net.resources.mappings.MyForms._
 import play.api.data._
 import play.api.data.Forms._
 import scala.Long
 
-object Application extends Controller with LocaleChange {
-
-  implicit val navigation: Seq[NavItem] = Array(NavItem("item-1"), NavItem("item-2"))
+object Application extends Controller with LocaleChange with Navigation {
 
   val mainPageFormBinder = Form(
     mapping(

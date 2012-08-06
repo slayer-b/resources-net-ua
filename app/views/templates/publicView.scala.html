@@ -57,10 +57,10 @@ coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
 
             <div style="margin-bottom: 10px;">
                 <img alt="*" src='@routes.Assets.at("images/content_mark_nav.gif")'/>
-                <a class="top_nav" href="#">@navigation.head.name</a>
+                <a class="top_nav" href="@navigation.head.url">@navigation.head.name</a>
                 @for(navItem <- navigation.tail) {
                     <img alt=">" src='@routes.Assets.at("images/content_mark_nav_2.gif")'/>&nbsp;
-                    <a class="top_nav" href="#">@navItem.name</a>
+                    <a class="top_nav" href="@navItem.url">@navItem.name</a>
                 }
             </div>
             <div>@content</div>

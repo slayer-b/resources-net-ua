@@ -5,4 +5,4 @@ package ua.net.resources.model
  * Date: 19.07.12
  */
 
-case class NavItem(name: String)
+case class NavItem(name: String, url: String)
