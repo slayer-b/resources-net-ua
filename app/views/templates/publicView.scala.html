@@ -14,17 +14,17 @@ coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
     <meta name="description" content="@coreSubmodules.page.description">
 
     <link rel="stylesheet" type="text/css" href='@routes.Assets.at("styles/styles1.css")'>
-    <script language="JavaScript" src='@routes.Assets.at("scripts/script1.js")'></script>
+    <script language="JavaScript" src="@routes.Assets.at("scripts/script1.js")"></script>
 
-    <link rel='icon' href='@routes.Assets.at("images/favicon.gif")' type='image/x-icon'>
-    <link rel="shortcut icon" href='@routes.Assets.at("images/favicon.gif")'>
+    <link rel="icon" href="@routes.Assets.at("images/favicon.gif")" type='image/x-icon'>
+    <link rel="shortcut icon" href="@routes.Assets.at("images/favicon.gif")">
 </head>
 
 <body>
 <table cellpadding="0" cellspacing="0" border="0">
     <tr class="top_right_0">
-        <td valign="bottom" align="left"><a href="/"><img src='@routes.Assets.at("images/logo.jpg")' alt="@coreSubmodules.siteConfig.title" title="@coreSubmodules.siteConfig.title"></a></td>
-        <td><img class="spacer_top" src='@routes.Assets.at("images/spacer.gif")'></td>
+        <td valign="bottom" align="left"><a href="/"><img src="@routes.Assets.at("images/logo.jpg")" alt="@coreSubmodules.siteConfig.title" title="@coreSubmodules.siteConfig.title"></a></td>
+        <td><img class="spacer_top" src="@routes.Assets.at("images/spacer.gif")"></td>
 
         <td rowspan="2" valign="top" width="100%">
             <div class="top_right">
@@ -32,7 +32,7 @@ coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
             </div>
             <div class="top_bottom_bg"><div class="top_bottom_left"><div class="top_bottom">
                 <div style="height:27px;padding-left:80px;color:#1c98bc;font-size:17px;font-style:italic;font-weight: normal;" align="left">Каталог украинских сайтов</div>
-                <div style="height:51px;padding-left:200px;"><a href='insertSite.html'><img alt="Добавить сайт" src='@routes.Assets.at("images/content/add_site.gif")'></a></div>
+                <div style="height:51px;padding-left:200px;"><a href='insertSite.html'><img alt="Добавить сайт" src="@routes.Assets.at("images/content/add_site.gif")"></a></div>
             </div></div></div>
         </td>
     </tr>
@@ -40,7 +40,7 @@ coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
         <td align="right" valign="top">
             <c:if test="${search_page ne null}">@parts.search()</c:if>
         </td>
-        <td><img class="spacer_top" src='@routes.Assets.at("images/spacer.gif")'></td>
+        <td><img class="spacer_top" src="@routes.Assets.at("images/spacer.gif")"></td>
     </tr>
 </table>
 
@@ -51,15 +51,15 @@ coreSubmodules: ua.net.resources.model.CoreSubmodules, lang: Lang)
     <td valign="top">
         <div style="margin-left: 30px;">
             <table width="100%"><tr>
-                <td align="center"><a style="behavior:url(#default#homepage);" href="#" onclick="makeHomePage(this); return false"><img src='@routes.Assets.at("images/content_mark_categories.jpg")'> Сделать стартовой</a></td>
-                <td align="center"><a href="#" onclick="return bookmark(this);"><img src='@routes.Assets.at("images/content_mark_categories.jpg")'> Добавить в избранное</a></td>
+                <td align="center"><a style="behavior:url(#default#homepage);" href="#" onclick="makeHomePage(this); return false"><img src="@routes.Assets.at("images/content_mark_categories.jpg")"> Сделать стартовой</a></td>
+                <td align="center"><a href="#" onclick="return bookmark(this);"><img src="@routes.Assets.at("images/content_mark_categories.jpg")"> Добавить в избранное</a></td>
             </tr></table>
 
             <div style="margin-bottom: 10px;">
                 <img alt="*" src='@routes.Assets.at("images/content_mark_nav.gif")'/>
                 <a class="top_nav" href="@navigation.head.url">@navigation.head.name</a>
                 @for(navItem <- navigation.tail) {
-                    <img alt=">" src='@routes.Assets.at("images/content_mark_nav_2.gif")'/>&nbsp;
+                    <img alt=">" src="@routes.Assets.at("images/content_mark_nav_2.gif")">&nbsp;
                     <a class="top_nav" href="@navItem.url">@navItem.name</a>
                 }
             </div>
