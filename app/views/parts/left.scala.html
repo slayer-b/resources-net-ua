@@ -11,7 +11,7 @@
 
 @if(!coreSubmodules.regions.isEmpty) {
     <div style="margin-top:15px;"><img alt="Регионы" src="@routes.Assets.at("images/left3/regions_msg.jpg")"></div>
-    <div style="margin-top:5px;margin-left:25px;">@parts.regions(coreSubmodules.regions)</div>
+    <div style="margin-top:5px;margin-left:25px;">@parts.regions(coreSubmodules.region, coreSubmodules.regions, coreSubmodules.page)</div>
 }
 
 <c:if test="${links_exchange_page ne null}">

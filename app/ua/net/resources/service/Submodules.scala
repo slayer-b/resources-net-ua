@@ -13,7 +13,7 @@ object Submodules {
   def coreSubmodules(page: Pages, region: Option[Region]) = CoreSubmodules(
       SiteConfig.find(),
       Counter.findAllActiveOrdered(),
-      Region.findAllOrdered(),
+      Region.findAllOrderedForModule(region),
       None,
       page,
       region

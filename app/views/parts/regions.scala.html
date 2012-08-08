@@ -1,11 +1,13 @@
-@(regions: Seq[ua.net.resources.domain.Region])
+@(curReg: Option[ua.net.resources.domain.Region], regions: Seq[ua.net.resources.domain.Region],
+page: ua.net.resources.domain.Pages)
 
-<c:if test="${cur_region ne null}">
+@for(region <- curReg) {
     <div style="margin-top:3px;"><img alt="*" src='@routes.Assets.at("images/left3/mark.jpg")'>
-    <a class="region_selected" href="index.html?id_regions=${cur_region.id}&id_pages=${page.id}">${cur_region.name}</a></div>
-</c:if>
+    <a class="region_selected" href="index.html?id_regions=@region.id&id_pages=@page.id">@region.name</a></div>
+}
+
 @for(region <- regions) {
     <div style="margin-top:3px;"><img alt="*" src='@routes.Assets.at("images/left3/mark.jpg")'>
-    <a class="region_not_selected" href="index.html?id_regions=@region.id&id_pages=${page.id}">@region.name</a>
+    <a class="region_not_selected" href="index.html?id_regions=@region.id&id_pages=@page.id">@region.name</a>
     </div>
 }
