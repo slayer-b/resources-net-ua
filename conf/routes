@@ -3,8 +3,8 @@
 # ~~~~
 
 # Home page
-GET     /                                               controllers.Application.mainPage
 GET     /index.html                                     controllers.Application.mainPage
+GET     /                                               controllers.Application.mainPage
 
 #Locale
 GET     /locale.html                                    controllers.Application.changeLang(lang: Option[String])

@@ -9,16 +9,17 @@ import ua.net.resources.mappings.MyForms._
 import play.api.data._
 import play.api.data.Forms._
 import scala.Long
+import ua.net.resources.Constants
 
 object Application extends Controller with LocaleChange with Navigation {
 
   val mainPageFormBinder = Form(
     mapping(
-      "id_pages" -> optionalLongNumber,
-      "id_regions" -> optionalLongNumber
+      Constants.id_pages -> optionalLongNumber,
+      Constants.id_regions -> optionalLongNumber
     )(MainPageForm.apply)(MainPageForm.unapply)
   )
-  
+
   def mainPage() = Action { implicit request =>
     val form = mainPageFormBinder.bindFromRequest().get
 
