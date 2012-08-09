@@ -14,9 +14,9 @@
     <div style="margin-top:5px;margin-left:25px;">@parts.regions(coreSubmodules.region, coreSubmodules.regions, coreSubmodules.page)</div>
 }
 
-<c:if test="${links_exchange_page ne null}">
-    <div style="margin-top:15px;"><a href="index.html?id_pages=${links_exchange_page.id}"><img src='@routes.Assets.at("images/left3/links_msg.jpg")' alt="${links_exchange_page.name}" title="${links_exchange_page.name}"></a></div>
-</c:if>
+@for(page <- coreSubmodules.usefulLinks) {
+    <div style="margin-top:15px;"><a href="index.html?id_pages=@page.id"><img src='@routes.Assets.at("images/left3/links_msg.jpg")' alt="@page.name" title="@page.name"></a></div>
+}
 
 <c:forEach items="${SAPE_ATTRIBUTE}" var="link">
     <div style="margin-top:10px;margin-left:25px;">${link}</div>

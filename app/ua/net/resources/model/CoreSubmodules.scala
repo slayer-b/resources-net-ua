@@ -13,5 +13,6 @@ case class CoreSubmodules(
   regions: Seq[Region],
   user: Option[User],
   page: Pages,
-  region: Option[Region]
+  region: Option[Region],
+  usefulLinks: Option[Pages]
 )
