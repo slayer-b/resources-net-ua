@@ -4,11 +4,6 @@
     <div style="margin-top:15px;margin-left: 5px;">@parts.loginForm()</div>
 </c:if>
 
-<c:if test="${partners_global_module ne null}">
-    <div style="margin-top:15px;"><img alt="Партнеры" src="@routes.Assets.at("images/left3/partners_msg.jpg")"></div>
-    <div style="margin-top:5px;margin-left:25px;">file="../globalModules/partners.jsp"</div>
-</c:if>
-
 @if(!coreSubmodules.regions.isEmpty) {
     <div style="margin-top:15px;"><img alt="Регионы" src="@routes.Assets.at("images/left3/regions_msg.jpg")"></div>
     <div style="margin-top:5px;margin-left:25px;">@parts.regions(coreSubmodules.region, coreSubmodules.regions, coreSubmodules.page)</div>
