@@ -22,10 +22,11 @@ trait Navigation {
   private def createNav(pages: Stream[PagesNav], region: Option[Region]) = {
     val navPages =
       pages.map(p => NavItem(p.name, Application.mainPage().url + "?" + Constants.id_pages + "=" + p.id))
-    if (region.isDefined)
+    if (region.isDefined) {
       navPages.:+(NavItem(region.get.name, navPages.last.url + "&" + Constants.id_regions + "=" + region.get.id))
-    else
+    } else {
       navPages
+    }
   }
 
 }
