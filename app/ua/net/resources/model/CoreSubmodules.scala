@@ -14,5 +14,6 @@ case class CoreSubmodules(
   user: Option[User],
   page: Pages,
   region: Option[Region],
-  usefulLinks: Option[Pages]
+  usefulLinks: Option[Pages],
+  siteLeader: Option[Site]
 )

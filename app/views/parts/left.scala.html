@@ -17,11 +17,11 @@
     <div style="margin-top:10px;margin-left:25px;">${link}</div>
 </c:forEach>
 
-<c:if test="${leader ne null}">
+@for(site <- coreSubmodules.siteLeader) {
     <div style="margin-top:15px;"><img src="@routes.Assets.at("images/left3/lider_msg.jpg")" alt="Лидер рейтинга" title="Лидер рейтинга"></div>
     <div style="margin-top:10px;margin-left:25px;">
-        <img src="@routes.Assets.at("images/left3/mark.jpg")"><a class="form_partners" href="index.html?id_sites=${leader.id}&id_pages=${leader.id_pages}&id_regions=">${leader.title}</a>
+        <img src="@routes.Assets.at("images/left3/mark.jpg")"><a class="form_partners" href="index.html?id_sites=@site.id&id_pages=@site.id_pages&id_regions=@site.id_regions">@site.title</a>
     </div>
-</c:if>
+}
 
 <div align="center" style="margin-top:15px;"><a href="/" class="self_url" title="@coreSubmodules.siteConfig.title">@coreSubmodules.siteConfig.title</a></div>
