@@ -8,7 +8,7 @@ import play.api.db.DB
  * User: slayer
  * Date: 09.08.12
  */
-case class Site(id: Long, id_users: Long, id_pages: Long, id_regions: Long,
+case class Site(id: Long, id_users: Option[Long], id_pages: Long, id_regions: Long,
                 title: String, description: String, info: String, keywords:String,
                 url: String, back_url: String, sort: Long, email: String)
 
@@ -21,8 +21,14 @@ object Site {
     }
   }
 
+  def findByMaxSort() = DB.withConnection { implicit c => {
+      SQL("select * from sites where sort = (select max(sort) from sites) limit 1")()
+        .headOption.map(mapSite).get
+    }
+  }
+
   def mapSite(row: SqlRow) =
-    Site(row[Long]("id"), row[Long]("id_users"), row[Long]("id_pages"), row[Long]("id_regions"),
+    Site(row[Long]("id"), row[Option[Long]]("id_users"), row[Long]("id_pages"), row[Long]("id_regions"),
         row[String]("title_ru"), row[String]("description_ru"), row[String]("info_ru"), row[String]("keywords_ru"),
         row[String]("url"), row[String]("back_url"), row[Long]("sort"), row[String]("email"))
 }

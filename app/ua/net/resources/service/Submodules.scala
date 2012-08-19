@@ -1,6 +1,7 @@
 package ua.net.resources.service
 
-import ua.net.resources.domain.{Pages, SiteConfig, Region, Counter}
+import ua.net.resources.domain._
+import ua.net.resources.model.CoreSubmodules
 import ua.net.resources.model.CoreSubmodules
 
 /**
@@ -18,7 +19,7 @@ object Submodules {
       page,
       region,
       None,
-      None
+      Site.findByMaxSort()
   )
 
 }
