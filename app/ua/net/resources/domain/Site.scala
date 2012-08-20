@@ -27,6 +27,13 @@ object Site {
     }
   }
 
+  def increaseSortBy(url: String) = DB.withConnection { implicit c => {
+      SQL("update sites set sort = sort + 1 where url like '%{url}%'")
+        .on("url" -> url)
+        .executeUpdate()
+    }
+  }
+
   def mapSite(row: SqlRow) =
     Site(row[Long]("id"), row[Option[Long]]("id_users"), row[Long]("id_pages"), row[Long]("id_regions"),
         row[String]("title_ru"), row[String]("description_ru"), row[String]("info_ru"), row[String]("keywords_ru"),
